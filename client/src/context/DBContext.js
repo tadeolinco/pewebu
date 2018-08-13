@@ -9,15 +9,23 @@ export class DBProvider extends Component {
     syncing: false,
   }
 
+  context = {}
+
   componentDidMount() {
     this.setState({ db: new PouchDB('pewebu') })
+
+    this.context = { ...this.state }
   }
 
   render() {
-    return <Provider value={{ ...this.state }}>{this.props.children}</Provider>
+    return (
+      <Provider value={{ ...this.context }}>{this.props.children}</Provider>
+    )
   }
 }
 
 export const withDB = Component => props => (
-  <Consumer>{db => <Component {...props} db={db} />}</Consumer>
+  <Consumer>
+    {dbContext => <Component {...props} dbContext={dbContext} />}
+  </Consumer>
 )

@@ -3,6 +3,7 @@
   --blue: #2185d0;
   --red: #db2828;
   --black: #1b1c1d;
+  --dark-black: rgba(0, 0, 0, 0.6);
   --gray: #e0e1e2;
   --dark-gray: #767676;
 }

@@ -40,7 +40,7 @@ const BudgetItem = ({ name, budget, available, header = false }) => {
                 : 'var(--red)'
           }
           weight={header ? 'bold' : 'normal'}
-          onChange={() => {
+          handleChange={() => {
             console.log('changing')
           }}
         >
